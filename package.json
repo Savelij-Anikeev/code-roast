@@ -1,0 +1,20 @@
+{
+  "name": "information-security-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "grant": "chmod +x ./scripts/development/*",
+    "init:dev": "./scripts/development/minikube-init.sh",
+    "serve:dev": "./scripts/development/minikube-apply.sh",
+    "state:dev": "./scripts/development/minikube-statuses.sh",
+    "dashboard:dev": "./scripts/development/minikube-dashboard.sh",
+    "proxy:up": "minikube tunnel --alsologtostderr",
+    "dashboard": "minikube dashboard --port=8888 --url",
+    "hotreload": "skaffold dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

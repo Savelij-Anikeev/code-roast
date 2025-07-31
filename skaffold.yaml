@@ -1,0 +1,26 @@
+apiVersion: skaffold/v4beta7
+kind: Config
+build:
+  local:
+    push: false
+    useDockerCLI: true
+  artifacts:
+    - image: backend
+      context: ./apps/backend
+      docker:
+        dockerfile: Dockerfile.development
+      sync:
+        manual:
+          - src: "**/*.py"
+            dest: /app
+    - image: frontend
+      context: ./apps/frontend
+      docker:
+        dockerfile: Dockerfile.development
+      sync:
+        manual:
+          - src: "**/*.{js,jsx,ts,tsx,css,scss,html}"
+            dest: /app
+manifests:
+  rawYaml:
+    - k8s/*
