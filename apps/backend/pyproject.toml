@@ -1,0 +1,10 @@
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["W292"]
+
+[tool.pytest.ini_options]
+testpaths = ["backend/app/tests"]
+python_files = "test_*.py"
