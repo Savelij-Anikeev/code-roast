@@ -19,7 +19,7 @@ build:
         dockerfile: Dockerfile.development
       sync:
         manual:
-          - src: "**/*.{js,jsx,ts,tsx,css,scss,html}"
+          - src: "**/*.{js,vue,jsx,ts,tsx,css,scss,html}"
             dest: /app
 manifests:
   rawYaml:
