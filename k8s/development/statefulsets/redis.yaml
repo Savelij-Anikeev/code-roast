@@ -21,6 +21,14 @@ spec:
           volumeMounts:
             - name: redis-data
               mountPath: /data
+            - name: redis-config
+              mountPath: /usr/local/etc/redis/redis.conf
+              subPath: redis.conf
+          command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
+      volumes:
+        - name: redis-config
+          configMap:
+            name: redis
   volumeClaimTemplates:
     - metadata:
         name: redis-data
