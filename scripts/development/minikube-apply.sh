@@ -12,10 +12,14 @@ echo "[INFO] Enabling ingress..."
 minikube addons enable ingress
 
 echo "[INFO] Applying manifests..."
+kubectl apply -f k8s/development/configMaps/
 kubectl apply -f k8s/development/statefulsets/
 kubectl apply -f k8s/development/deployments/
 kubectl apply -f k8s/development/services/
 kubectl apply -f k8s/development/secrets/
 kubectl apply -f k8s/development/ingresses/
+
+echo "[INFO] Setting up proxy..."
+minikube tunnel
 
 echo "[INFO] Done."
