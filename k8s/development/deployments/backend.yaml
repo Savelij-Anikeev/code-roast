@@ -22,3 +22,5 @@ spec:
               value: "postgresql+asyncpg://user:password@postgres:5432/app_db"
             - name: REDIS_URL
               value: "redis://redis:6379/0"
+            - name: ENV
+              value: 'development'
