@@ -1,6 +1,6 @@
 import redis.asyncio as redis
 
-from ..core.protocols.extension import Extension
+from ..core.lib.extension import Extension
 from ..core.config import settings
 
 class RedisExtension(Extension):

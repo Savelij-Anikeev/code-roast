@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 
-from ..core.protocols.extension import Extension
+from ..core.lib.extension import Extension
 from ..core.config import settings
 
 class PgExtension(Extension):

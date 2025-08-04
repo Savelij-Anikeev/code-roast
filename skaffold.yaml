@@ -12,7 +12,7 @@ build:
       sync:
         manual:
           - src: "**/*.py"
-            dest: /app
+            dest: /app/app
     - image: frontend
       context: ./apps/frontend
       docker:

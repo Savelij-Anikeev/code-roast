@@ -1,6 +1,6 @@
 import logging
 
-from ..core.protocols.extension import Extension
+from ..core.lib.extension import Extension
 
 class LoggerExtension(Extension):
     def init(self):
