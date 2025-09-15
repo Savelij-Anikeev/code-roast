@@ -5,22 +5,46 @@ build:
     push: false
     useDockerCLI: true
   artifacts:
-    - image: backend
-      context: ./apps/backend
-      docker:
-        dockerfile: Dockerfile.development
-      sync:
-        manual:
-          - src: "**/*.py"
-            dest: /app
     - image: frontend
       context: ./apps/frontend
       docker:
         dockerfile: Dockerfile.development
       sync:
         manual:
-          - src: "**/*.{js,vue,jsx,ts,tsx,css,scss,html}"
+          - src: "**/*.{js,vue,jsx,ts,tsx,css,scss,html,svg}"
             dest: /app
+    - image: auth-service
+      context: ./apps/auth.service
+      docker:
+        dockerfile: Dockerfile.development
+      sync:
+        manual:
+          - src: "**/*{py, proto, sh}"
+            dest: /app/app
+    - image: reviews-service
+      context: ./apps/reviews.service
+      docker:
+        dockerfile: Dockerfile.development
+      sync:
+        manual:
+          - src: "**/*{py, proto, sh}"
+            dest: /app/app
+    - image: rest-gateway-service
+      context: ./apps/rest-gateway.service
+      docker:
+        dockerfile: Dockerfile.development
+      sync:
+        manual:
+          - src: "**/*{py, proto, sh}"
+            dest: /app/app
+    - image: ws-gateway-service
+      context: ./apps/ws-gateway.service
+      docker:
+        dockerfile: Dockerfile.development
+      sync:
+        manual:
+          - src: "**/*{py, proto, sh}"
+            dest: /app/app
 manifests:
   rawYaml:
     - k8s/*

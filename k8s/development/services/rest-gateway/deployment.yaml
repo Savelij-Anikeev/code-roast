@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-gateway
+  namespace: ecosystem
+  labels:
+    app: rest-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rest-gateway
+  template:
+    metadata:
+      labels:
+        app: rest-gateway
+    spec:
+      containers:
+        - name: rest-gateway
+          image: rest-gateway-service:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+            - containerPort: 50051
+          env:
+            - name: PYTHONPATH
+              value: /app/app

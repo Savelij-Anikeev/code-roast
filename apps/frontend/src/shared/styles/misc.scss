@@ -1,0 +1,9 @@
+@use './variables' as *;
+
+.clickable {
+	cursor: pointer;
+
+	&:hover {
+		color: $sexy;
+	}
+}
