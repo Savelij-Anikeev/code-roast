@@ -1,0 +1,12 @@
+@keyframes anim-expand-from-center {
+	0% {
+		transform: scaleY(0);
+		transform-origin: center;
+		opacity: 0;
+	}
+	100% {
+		transform: scaleY(1);
+		transform-origin: center;
+		opacity: 1;
+	}
+}

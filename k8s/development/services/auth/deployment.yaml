@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth
+  namespace: ecosystem
+  labels:
+    app: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth
+          image: auth-service:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 50051
+          env:
+            - name: PYTHONPATH
+              value: /app/app

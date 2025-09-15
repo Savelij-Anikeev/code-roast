@@ -1,5 +1,5 @@
 {
-  "name": "code-roast",
+  "name": "code-roaster",
   "version": "1.0.0",
   "description": "website for reviewing and roasting your code with AI tools.",
   "scripts": {
@@ -7,6 +7,8 @@
     "init:dev": "./scripts/development/minikube-init.sh",
     "serve:dev": "./scripts/development/minikube-apply.sh",
     "state:dev": "./scripts/development/minikube-statuses.sh",
+    "fuck-tunnel": "sudo pkill -f \"minikube tunnel\" || true",
+    "create-cert": "./scripts/development/create-cert.sh",
     "proxy:up": "minikube tunnel --alsologtostderr",
     "dashboard": "minikube dashboard --port=8888 --url",
     "hotreload": "skaffold dev",
@@ -21,6 +23,5 @@
     "chatgpt"
   ],
   "author": "anikeev-savelij & mrkbbs",
-  "license": "ISC",
-  "type": "commonjs"
+  "license": "ISC"
 }
